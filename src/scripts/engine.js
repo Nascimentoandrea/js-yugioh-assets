@@ -17,13 +17,13 @@ fieldCards:{
 actions:{
    button: document.getElementById("next-duel") },
 
-};
+    };
 
 const playerSides = {
     player1: "player-field-card",
     computer: ""
-}
-const pathImages = ".src/assets/icons/":
+     }
+const pathImages = ".src/assets/icons/";
 const cardData = [];
     {
         id = 0,
@@ -32,7 +32,7 @@ const cardData = [];
         img : `${pathImages}dragon.jpg`,
         WinOf: [1],
         LoseOf: [2]
-    },
+    }
     {
         id = 1,
         name: "Dark Magician",
@@ -57,10 +57,28 @@ async function getRandomCardId() {
     return cardData[randomIndex]
 }
 
+async function createcardImage(randomIdCard, fieldSide) {
+    const cardImage = document.createElement ("img");
+    cardImage.setAttribute ("height", "100px");
+    cardImage.setAttribute ("src", ".src/assets/icons/card-back.png");
+    cardImage.setAttribute ("data-id", "Idcard");
+    cardImage.classList.add ("card");
+
+    if (fieldSide === playerSides.player1) {
+        cardImage.addEventListener("click", ()=>{
+            setCardsField(cardImage.getAttribute("data-id"));
+        });
+    }
+
+    cardImage.addEventListener("mouseover", ()=>{
+        drawSelectCard(IdCard);
+    });
+}
+
 async function drawCards(cardNumbers, fieldSide) {
     for (let i = 0; i < cardNumbers; i++) {
         const randomIdCard = await getRandomCardId();
-        const cardImage = wait createcardImage(randomIdCard, fieldSide);
+        const cardImage = await createcardImage(randomIdCard, fieldSide);
 
         document.getElementById(fieldSide).appendChild(cardImage);
     }
