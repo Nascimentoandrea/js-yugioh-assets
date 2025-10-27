@@ -14,9 +14,63 @@ fieldCards:{
     player: document.getElementById("player-field-card"),
     computer: document.getElementById("computer-field-card")
     }, 
-button: document.getElementById("next-duel")
+actions:{
+   button: document.getElementById("next-duel") },
+
 };
-function init(){}
+
+const playerSides = {
+    player1: "player-field-card",
+    computer: ""
+}
+const pathImages = ".src/assets/icons/":
+const cardData = [];
+    {
+        id = 0,
+        name: "Blue-Eyes White Dragon",
+        type: "Paper",
+        img : `${pathImages}dragon.jpg`,
+        WinOf: [1],
+        LoseOf: [2]
+    },
+    {
+        id = 1,
+        name: "Dark Magician",
+        type: "Rock",
+        img: `${pathImages}magician.png`,
+        WinOf: [2],
+        LoseOf: [0]
+    },
+    {
+        id = 2,
+        name: "Exodia",
+        type: "Scissors",
+        img: `${pathImages}exodia.png`,
+        WinOf: [0],
+        LoseOf: [1]
+
+    }
+];
+
+async function getRandomCardId() {
+    const randomIndex = Math.floor(Math.random() * cardData.length)
+    return cardData[randomIndex]
+}
+
+async function drawCards(cardNumbers, fieldSide) {
+    for (let i = 0; i < cardNumbers; i++) {
+        const randomIdCard = await getRandomCardId();
+        const cardImage = wait createcardImage(randomIdCard, fieldSide);
+
+        document.getElementById(fieldSide).appendChild(cardImage);
+    }
+    
+}
+function init(){
+    drawCards(5, "playerSides.player1");
+    drawCards(5, "playerSides.computer");
+
+}
    
 
 
