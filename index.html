@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!--- favicon --->
+    <link rel="shortcut icon" href="./src/assets/favicon/Favicon.ico" type="image/x-icon">
+
+
     <!-- main styles -->
     <link rel="stylesheet" href="./src/styles/main.css">
 
@@ -14,15 +18,14 @@
     <link rel="stylesheet" href="./src/styles/buttons.css">
 
     <!-- containers and frames -->
-    <link rel="stylesheet" href="./src/styles/containers_and_frames.css">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./src/styles/containers_and_frames.css">!
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Yu-Gi-Oh Jo-Ken-Po Edition</title>
 </head>
 <body>
+  <audio id="bgm" loop> 
+    <source src="./src/assets/audios/egyptian_duel.mp3" type="audio/mp3"/>
+  </audio>
   <div class="bg-video">
       <video class="video" autoplay loop muted id="bg-video">
         <source src="./src/assets/video/yugi.mp4" type="video/mp4"/>
@@ -36,7 +39,7 @@
         <span id="score_points">Win : 0 | Lose: 0</span>
       </div>
       <div class="menu_avatar">
-        <img id="card-image" src="">
+        <img id="card-image" alt="">
       </div>
       <div class="card_details frame">
         <p id="card-name">Selecione</p>

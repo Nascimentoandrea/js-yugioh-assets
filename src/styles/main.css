@@ -1,3 +1,12 @@
+body {
+    cursor: url("../assets/cursor/yugicursor.png"), default;
+}
+
+button, a, img:hover, a:hover {
+    cursor: url("../assets/cursor/yamiyugicursorGLOW.png"), default;
+}
+
+
 .bg-video{
     position: absolute;
     z-index: -2;
@@ -23,14 +32,13 @@
     background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 1) 100%);
     
     }
-.container{
+.container {
     position: relative;
     z-index: 3;
     display: flex;
     height: 100vh;
     }
-.container__left{
-    border: 1px solid red;
+.container__left {
     width: 35%;
     min-width: 300px;
     display: flex;
@@ -93,11 +101,12 @@
 
     }
 .card-versus__container{
-    margin-top: 5rem;
     display: flex;
     flex-direction: column;
+    justify-items: center;
+    align-items: center;
     padding-top: 0.1rem;
-    height: 300px;
+    height: auto;
 
     }
 .versus-top,
@@ -116,7 +125,7 @@
 
     }
 .card-box{
-    height: 9rem;
+    height: 15rem;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -127,9 +136,13 @@
 .card-infield{
     height: 11.2rem;
     width: 8rem;
+    border: 1px solid white;
     border-radius: 8px;
 
      }
+
+    
+     
 
 .card{
     transition: transform 0.2s;
@@ -139,6 +152,8 @@
 .card:hover {
     transform: scale(111.2rem);
 
-
     }
 
+.debug {
+    border: 1px solid red;
+} 
